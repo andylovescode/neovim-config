@@ -10,7 +10,7 @@ vim.opt.ignorecase = true
 vim.cmd("Neotree")
 vim.cmd("bnext | bot sp | term nu")
 vim.cmd("nnoremap <C-z> u")
-vim.cmd("nnoremap <C-y> <C-r>")
+vim.cmd("nnoremap <C-S-z> <C-r>")
 
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -72,3 +72,7 @@ vim.cmd.colorscheme("catppuccin")
 vim.diagnostic.config({ virtual_text = { severity = { min = vim.diagnostic.severity.WARN } }, signs = true, underline = true, update_in_insert = true })
 
 require("typescript-tools").setup({})
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', 'fg', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', 'ff', builtin.live_grep, { desc = 'Telescope live grep' })
