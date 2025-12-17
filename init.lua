@@ -8,6 +8,9 @@ vim.opt.ignorecase = true
 
 -- Layout
 vim.cmd("Neotree")
+vim.cmd("bnext | bot sp | term nu")
+vim.cmd("nnoremap <C-z> u")
+vim.cmd("nnoremap <C-y> <C-r>")
 
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
